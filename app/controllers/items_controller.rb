@@ -27,6 +27,12 @@ class ItemsController < ApplicationController
     redirect_to @item
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path
+  end
+
   #private以下はこのクラス外での編集不可になる(privateメソッド)
   private
 
